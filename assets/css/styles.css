@@ -47,6 +47,16 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+/*Main styles*/
+body, html {
+font-family: 'Merriweather', serif;
+font-size: 16px;
+line-height: 1.2em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+font-family: 'Raleway', sans-serif;
+}
 
 /*Flex*/
 
@@ -74,8 +84,38 @@ table {
 .text-center {
   text-align: center;
 }
-/*Footer*/
-footer {
+
+.text-end {
+  text-align: end;
+}
+
+.padding-sm {
   padding: 20px;
-  background: url('../images/dark-wood.png'); 
+}
+
+.padding-md {
+  padding: 50px;
+}
+/* Navigation */
+nav {
+  max-height: 50px;
+}
+
+nav img {
+  width: 80px;
+}
+
+nav ul {
+  width: 40%;
+}
+
+/*Footer*/
+.footer {
+  background: url('../images/dark-wood.png');
+  line-height: 1.8em;
+  padding-bottom: 0px; 
+}
+
+.footer-logo {
+  width: 50%;
 }
