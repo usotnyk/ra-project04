@@ -1,0 +1,117 @@
+
+/*Main styles*/
+body, html {
+font-family: 'Merriweather', serif;
+font-size: 16px;
+line-height: 1.2em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+font-family: 'Raleway', sans-serif;
+}
+
+h1 {
+  font-size: 2.5em;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/*Flex*/
+
+.flex {
+  display: flex;
+}
+
+.fl-col {
+  flex-direction: column;
+}
+
+.fl-wrap {
+  flex-wrap: wrap;
+}
+
+.fl-jstcont-spbtw {
+  justify-content: space-between;
+}
+/*Colors*/
+.font-white {
+  color: white;
+}
+
+/*Paddings-Margins-Alignment*/
+.text-center {
+  text-align: center;
+}
+
+.text-end {
+  text-align: end;
+}
+
+.padding-sm {
+  padding: 20px;
+}
+
+.padding-md {
+  padding: 50px;
+}
+
+.margin-sm {
+  margin: 10px;
+}
+
+.margin-md {
+  margin: 20px;
+}
+
+.width-half {
+  width: 50%;
+}
+
+.width-quarter {
+  width: 25%;
+}
+
+/* Navigation */
+
+nav {
+  max-height: 50px;
+    img {
+      width: 80px;
+    }
+    ul {
+      width:40%;
+    }
+}
+/*Header*/
+header {
+  height: 70vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('../assets/images/logos/inhabitent-logo-full.svg') no-repeat, url('../assets/images/home-hero.jpg') no-repeat;
+  background-size: cover, 20%, cover;
+  background-position: center, center, top center;
+  margin-top: -90px;
+}
+
+/*Shop Stuff*/
+
+.shop-container {
+  border: 1px solid #DFDFDF;
+  border-top: 3px solid #DFDFDF;
+  padding: 10px;
+    p {
+      margin: 10px 0;
+    }
+}
+
+.shop-btn {
+  color: white;
+  background-color: $color-main;
+  border: none;
+  padding: 8px 15px;
+}
+
+/*Footer*/
+.footer {
+  background: url('../assets/images/dark-wood.png');
+  line-height: 1.8em;
+  padding-bottom: 0px; 
+}
