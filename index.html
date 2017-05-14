@@ -10,14 +10,14 @@
 <!-- CSS!-->
 <link href="https://fonts.googleapis.com/css?family=Merriweather:300,300i,700,700i,900,900i|Raleway:400,500,600,700" rel="stylesheet">
 <link rel="stylesheet" href="assets/font-awesome-4.7.0/css/font-awesome.min.css">
-<link href="assets/css/styles.css" rel="stylesheet">
+<link href="dist/min.styles.css" rel="stylesheet">
 </head>
 
 <body>
 <!-- Navigation -->
-<nav class="flex fl-jstcont-spbtw padding-sm">
+<nav class="flex fl-jstcont-spbtw font-white">
   <img src="assets/images/logos/inhabitent-logo-tent-white.svg">
-  <ul class="flex fl-jstcont-spbtw">
+  <ul class="flex fl-jstcont-spbtw fl-align-cnt">
     <li>SHOP</li>
     <li>JOURNAL</li>
     <li>ABOUT</li>
@@ -32,15 +32,100 @@
 <!-- End of Navigation -->
 
 <!-- Header -->
+<header></header>
 <!-- End of Header -->
 
 <!--Shop -->
+<h1 class="padding-md">Shop Stuff</h1>
+<div class="flex margin-md">
+  <article class="shop-container text-center margin-sm">
+    <img src="assets/images/product-type-icons/do.svg" class="width-quarter">
+    <p>Get back to nature with all the tools and toys you need to enjoy the great outdoors</p>
+    <button class="shop-btn margin-sm">DO STUFF</button>
+  </article>
+
+  <article class="shop-container text-center margin-sm">
+    <img src="assets/images/product-type-icons/eat.svg" class="width-quarter">
+    <p>Nothing beats food cooked over a fire. We have all you need for good camping eats.</p>
+    <button class="shop-btn margin-sm">EAT STUFF</button>
+  </article>
+
+  <article class="shop-container text-center margin-sm">
+    <img src="assets/images/product-type-icons/sleep.svg" class="width-quarter">
+    <p>Get a good nigth's rest in the wild in a home away from home that travels well.</p>
+    <button class="shop-btn margin-sm">SLEEP STUFF</button>
+  </article>
+
+  <article class="shop-container text-center margin-sm">
+    <img src="assets/images/product-type-icons/wear.svg" class="width-quarter">
+    <p>From flannel shirts to toques, look the part while roughing it in the great outdoors.</p>
+    <button class="shop-btn margin-sm">WEAR STUFF</button>
+  </article>
+
+</div>
 <!--End of Shop -->
 
 <!--Journal -->
+<h1 class="padding-md">Inhabitent Journal</h1>
+<div class="flex margin-md">
+  <article class="journal-container">
+    <img src="assets/images/blog-photos/van-camper.jpg" class="width-full">
+    <div>
+      <p>14 Aoril 2016 / 3 comments</p>
+      <h3>Van camping photo Contest</h3>
+      <button class="entry-btn">READ ENTRY</button>
+    </div>
+  </article>
+
+  <article class="journal-container">
+    <img src="assets/images/blog-photos/warm-cocktail.jpg" class="width-full">
+    <div>
+      <p>14 Aoril 2016 / 3 comments</p>
+      <h3>Van camping photo Contest</h3>
+      <button class="entry-btn">READ ENTRY</button>
+    </div>
+  </article>
+
+  <article class="journal-container">
+    <img src="assets/images/blog-photos/healthy-camp-food.jpg" class="width-full">
+    <div>
+      <p>14 Aoril 2016 / 3 comments</p>
+      <h3>Van camping photo Contest</h3>
+      <button class="entry-btn">READ ENTRY</button>
+    </div>
+  </article>
+
+</div>
 <!--End of Journal -->
 
 <!--Latest-post -->
+<h1 class="padding-md">Latest Adventures</h1>
+<div class="flex margin-md font-white latest-posts-container">
+  <div class="fl-one">
+    <article class="article-box-1">
+      <h2>Getting Back to Nature in a Canoe</h2>
+      <button class="read-btn">READ MORE</button>
+    </article>
+  </div>
+  <div class="flex fl-col fl-one">
+    <article class="article-box-2 fl-one">
+      <h3>A Night with Friends at the Beach</h3>
+      <button class="read-btn">READ MORE</button>
+    </article>
+  
+    <div class="flex fl-one">
+      <article class="article-box-3 fl-one">
+          <h4>Taking in the View at Big Mountain</h4>
+          <button class="read-btn">READ MORE</button>
+      </article>
+      <article class="article-box-4 fl-one">
+          <h4>Star-Gazing at the Night Sky</h4>
+          <button class="read-btn">READ MORE</button>
+      </article>
+    </div>
+  </div>  
+</div>
+<button class="adv-btn">MORE ADVENTURES</button>
 <!--End of Latest-post -->
 
 <!--Footer -->
@@ -69,9 +154,9 @@
       <p><b>Sunday:</b> Closed</p>
     </section>
     <section class="text-end">
-      <img src="assets/images/logos/inhabitent-logo-text.svg" class="footer-logo"></section>
+      <img src="assets/images/logos/inhabitent-logo-text.svg" class="width-half"></section>
   </div>
-  <div class="text-center padding-sm">COPYRIGHT 2016 COHABITANT</div>
+  <p class="text-center padding-sm">COPYRIGHT 2016 COHABITANT</p>
 </footer>
 <!--End of Footer -->
 
