@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
+import { LatestAdventuresService } from './services/latest-adventures.service'
+
 import { AppComponent } from './app.component';
 import { NavComponent } from './views/nav/nav.component';
 import { HeaderComponent } from './views/header/header.component';
@@ -26,7 +28,7 @@ import { FooterComponent } from './views/footer/footer.component';
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [LatestAdventuresService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
