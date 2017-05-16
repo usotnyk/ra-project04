@@ -13,10 +13,14 @@ export class LatestAdventuresService {
   getAdventures():Promise<any> {
     //console.log("inside getAdventures");
     let newPromise: any = this.http.get(this.adventuresUrl)
-    .toPromise()
+    .toPromise();
+
+    let resolvedPromise: any = Promise
+    .resolve(newPromise
     .then( response => {return response.json();} )
-    .catch( error => {console.log(error)} );
+    .catch( error => {console.log(error)} )
+    );
     
-    return newPromise;
+    return resolvedPromise;
   }
 }
