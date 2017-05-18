@@ -1,3 +1,10 @@
-<p>
-  single-adventure works!
-</p>
+<app-nav-dark></app-nav-dark>
+
+<div *ngIf='currentAdventureToDisplay'>
+  <h1>Single Adventure View</h1>
+  <h2>{{ currentAdventureToDisplay.title }}</h2>
+  <p>{{ currentAdventureToDisplay.content }}</p>
+  <img class="single-adv-img" style="max-width:100%" [attr.src]="currentAdventureToDisplay.image">
+
+  <app-form></app-form>
+</div>

@@ -1,0 +1,20 @@
+<hr>
+<h2>Submit your Adventure</h2>
+<p class="margin-sm">You can share your adventures with others here!</p>
+
+<form id="apiForm" method="post" class="margin-sm">
+
+  <label class="form-label" for="title">Title</label><br />
+  <input class="width-half form-input" name="title" value="My first adventurous post"><br />
+
+  <label class="form-label" for="content">Content</label><br />
+  <input class="width-full form-input content-input" name="content" value="Sitting on a rock perched high up on the alpine pass, you can’t help but feel proud of yourself. There were moments during the long, gruelling climb where you wondered whether the effort was really worth it. But now, as you gaze at the iridescent turquoise lake far below and the imposingly rugged peaks all around you, you feel a profound sense of wonder. And for a few special moments, your everyday stresses seem so far away. It was most definitely worth it."><br />
+
+  <label class="form-label" for="image">Image</label><br />
+  <input class="width-full form-input" name="image" value="http://www.besthospitalitydegrees.com/wp-content/uploads/2014/01/travel-adventure-blogs.jpg"><br />
+
+  <label class="form-label" for="categories">Categories</label><br />
+  <input class="width-half form-input" name="categories" value="hiking, nature"><br />
+
+  <input class="shop-btn margin-sm" type="button" id="submit" name="submit" value="SUBMIT" (click)="prepareData($event)"><br />
+</form>

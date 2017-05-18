@@ -17,6 +17,7 @@ import { HomeComponent } from './views/home/home.component';
 import { SingleAdventureComponent } from './views/single-adventure/single-adventure.component';
 import { AllAdventuresComponent } from './views/all-adventures/all-adventures.component';
 import { NavDarkComponent } from './views/nav-dark/nav-dark.component';
+import { FormComponent } from './views/form/form.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { NavDarkComponent } from './views/nav-dark/nav-dark.component';
     HomeComponent,
     SingleAdventureComponent,
     AllAdventuresComponent,
-    NavDarkComponent
+    NavDarkComponent,
+    FormComponent
   ],
   imports: [
     BrowserModule,

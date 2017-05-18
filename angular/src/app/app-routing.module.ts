@@ -19,12 +19,12 @@ const routes: Routes = [
   },
 
   {
-   path: 'alladventures',
+   path: 'all-adventures',
    component: AllAdventuresComponent
  },
 
  {
-   path: 'singleadventure',
+   path: 'single-adventure/:ID',
    component: SingleAdventureComponent
  }
  
