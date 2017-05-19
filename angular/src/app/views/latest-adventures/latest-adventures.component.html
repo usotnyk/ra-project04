@@ -9,26 +9,25 @@
       <img class="bg-image" [attr.src]="allAdventures.adventures[0].image">
       
       <h2>{{ allAdventures.adventures[0].title }}</h2>
-      <button class="read-btn" [routerLink]="['/single-adventure', allAdventures.adventures[0].ID]" outerLinkActive="active">READ MORE</button>
+      <button class="read-btn" [routerLink]="['/single-adventure', allAdventures.adventures[0].ID]" routerLinkActive="active">READ MORE</button>
     </article>
 
   </div>
   <div class="flex fl-col fl-one">
     <article class="article-box-2 fl-one">
       <h3>{{ allAdventures.adventures[1].title }}</h3>
-      <button class="read-btn" [routerLink]="['/single-adventure', allAdventures.adventures[1].ID]" outerLinkActive="active">READ MORE</button>
+      <button class="read-btn" [routerLink]="['/single-adventure', allAdventures.adventures[1].ID]" routerLinkActive="active">READ MORE</button>
     </article>
   
     <div class="flex fl-one">
       <article class="article-box-3 fl-one">
           <h4>{{ allAdventures.adventures[2].title }}</h4>
-          <button class="read-btn" [routerLink]="['/single-adventure', allAdventures.adventures[2].ID]" outerLinkActive="active">READ MORE</button>
+          <button class="read-btn" [routerLink]="['/single-adventure', allAdventures.adventures[2].ID]" routerLinkActive="active">READ MORE</button>
       </article>
       <article class="article-box-4 fl-one">
           <h4>{{ allAdventures.adventures[3].title }}</h4>
-          <button class="read-btn" [routerLink]="['/single-adventure', allAdventures.adventures[3].ID]" outerLinkActive="active">READ MORE</button>
+          <button class="read-btn" [routerLink]="['/single-adventure', allAdventures.adventures[3].ID]" routerLinkActive="active">READ MORE</button>
       </article>
-    </div>
-  </div>  
+    </div>  </div>  
 </div>
-<button class="adv-btn" routerLink="/all-adventures" outerLinkActive="active">MORE ADVENTURES</button>
+<button class="adv-btn" routerLink="/all-adventures" routerLinkActive="active">MORE ADVENTURES</button>

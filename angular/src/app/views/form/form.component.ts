@@ -7,7 +7,10 @@ import { LatestAdventuresService } from '../../services/latest-adventures.servic
   styleUrls: ['../../../../../dist/min.styles.css']
 })
 export class FormComponent implements OnInit {
-  shouldDisplayModal: boolean = false;
+
+  shouldDisplaySuccessModal: boolean = false;
+  shouldDisplayErrorModal: boolean = false;
+  serverResponseMsg: string = "";
   
   constructor(private latestAdventureService: LatestAdventuresService) { }
 
@@ -15,7 +18,7 @@ export class FormComponent implements OnInit {
   }
 
   prepareData(event) {
-    console.log('inside prepare data');
+    //console.log('inside prepare data');
     let AdventuresForm = event.target.parentElement;
     //console.log(AdventuresForm);
 
@@ -69,28 +72,37 @@ export class FormComponent implements OnInit {
     //console.log(parameters);
     let postAdventurePromise = this.latestAdventureService.postAdventures(parameters);
     postAdventurePromise.then(this.displaySubmitModal.bind(this));
-    // console.log(call);
-    //debugger;
-
-    // let resolvedCall: Promise<any> = Promise.resolve(
-    // call.then( response => {
-    //   console.log(response);
-    //   //debugger;
-    // }));
-      
-
-
-    // call.then(
-    //   (r) => {
-    //   console.log(r);
-    //   debugger;
-    //   }
-    // );
-
   };
 
-  displaySubmitModal() {
-    console.log("success! pop up should be displayed");
-    this.shouldDisplayModal = true;
+  displaySubmitModal(response) {
+    console.log(response);
+    this.serverResponseMsg = response._body;
+    console.log(this.serverResponseMsg);
+    //{"error":{"type":"post","code":"the title\/content has to be greater than 8 characters ... Jermey"}}
+    //{"post_created":"post has been created with the ID of : 221"}
+    
+     let msg: string =this.serverResponseMsg[2] + this.serverResponseMsg[3]+this.serverResponseMsg[4]+this.serverResponseMsg[5];
+     console.log(msg);
+
+     //.indexOf() && .lastIndexOf()
+    
+    if (msg === "post") {
+      this.shouldDisplaySuccessModal = true;
+      console.log(this.shouldDisplaySuccessModal);
+    } else {
+      this.shouldDisplayErrorModal = true;
+      console.log(this.shouldDisplayErrorModal);
+    }
+
+    
+  }
+
+  hideSubmitModal() {
+    //console.log("inside hideSubmitModal");
+    //debugger;
+    this.shouldDisplaySuccessModal = false;
+    //console.log(this.shouldDisplaySuccessModal);
+    this.shouldDisplayErrorModal = false;
+    this.serverResponseMsg = "";
   }
 }
