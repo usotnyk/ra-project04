@@ -7,7 +7,8 @@ import { LatestAdventuresService } from '../../services/latest-adventures.servic
   styleUrls: ['../../../../../dist/min.styles.css']
 })
 export class FormComponent implements OnInit {
-
+  shouldDisplayModal: boolean = false;
+  
   constructor(private latestAdventureService: LatestAdventuresService) { }
 
   ngOnInit() {
@@ -16,16 +17,12 @@ export class FormComponent implements OnInit {
   prepareData(event) {
     console.log('inside prepare data');
     let AdventuresForm = event.target.parentElement;
-    console.log(AdventuresForm);
+    //console.log(AdventuresForm);
 
     let serializedForm = this.jsSerializeArray(AdventuresForm);
-    console.log(serializedForm);
-    let jsonString = JSON.stringify(serializedForm);
-    console.log(jsonString);
-    let paramsObject = { params : jsonString }
-    console.log(paramsObject);
-    this.onParamsReady();
-    return paramsObject;
+    //console.log(serializedForm);
+    let jsonParams = JSON.stringify(serializedForm);
+    this.onParamsReady(jsonParams);
   }
 
 
@@ -68,9 +65,32 @@ export class FormComponent implements OnInit {
 
 };
 
+  onParamsReady(parameters) {
+    //console.log(parameters);
+    let postAdventurePromise = this.latestAdventureService.postAdventures(parameters);
+    postAdventurePromise.then(this.displaySubmitModal.bind(this));
+    // console.log(call);
+    //debugger;
 
-  onParamsReady() {
-    this.latestAdventureService.postAdventures();
+    // let resolvedCall: Promise<any> = Promise.resolve(
+    // call.then( response => {
+    //   console.log(response);
+    //   //debugger;
+    // }));
+      
+
+
+    // call.then(
+    //   (r) => {
+    //   console.log(r);
+    //   debugger;
+    //   }
+    // );
+
   };
 
+  displaySubmitModal() {
+    console.log("success! pop up should be displayed");
+    this.shouldDisplayModal = true;
+  }
 }
