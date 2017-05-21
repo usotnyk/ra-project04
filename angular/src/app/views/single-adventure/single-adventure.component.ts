@@ -7,7 +7,7 @@ import { Adventure } from '../../models/adventure';
 @Component({
   selector: 'app-single-adventure',
   templateUrl: './single-adventure.component.html',
-  styleUrls: ['./single-adventure.component.css']
+  styleUrls: ['../../../../../dist/min.styles.css']
 })
 export class SingleAdventureComponent implements OnInit {
   adventures: any;
@@ -28,7 +28,7 @@ export class SingleAdventureComponent implements OnInit {
     
     this.service.getAdventures().then(adventures => {
       this.adventures = adventures.adventures;
-      //console.log(this.adventures);
+      console.log(this.adventures);
 
       let currentAdventureToDisplay = this.adventures.find(adventure => {
         return adventure.ID == currentAdventureId;

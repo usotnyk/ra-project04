@@ -18,6 +18,7 @@ import { SingleAdventureComponent } from './views/single-adventure/single-advent
 import { AllAdventuresComponent } from './views/all-adventures/all-adventures.component';
 import { NavDarkComponent } from './views/nav-dark/nav-dark.component';
 import { FormComponent } from './views/form/form.component';
+//import { AlertComponent } from './views/alert/alert.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { FormComponent } from './views/form/form.component';
     SingleAdventureComponent,
     AllAdventuresComponent,
     NavDarkComponent,
-    FormComponent
+    FormComponent,
+    //AlertComponent
   ],
   imports: [
     BrowserModule,

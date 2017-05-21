@@ -26,3 +26,31 @@ Before running the tests make sure you are serving the app via `ng serve`.
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+May-19-2017
+
+To do:
+
+DONE - close alert + change shouldDisplayModel to false (ngStyle - display:none || [ngClass]="{'display-none-class': shouldDisplayModel === false}");
+
+DONE - add esle to display "error" model if post was not submitted (ng-template);
+
+- add interfaces for AllAdventures and Adventure;
+
+DONE - All-adventures view: 
+  -populate with data from allAdventures;
+  -link each button to it's ID + pass to to singleAdventureView;
+
+-Form: 
+  -inidicate required fields visually;
+  -add checks to the fields + display errors when filling the form; 
+  -add select dropdown to the form + enums;
+
+  DONE -SingleAdventureView:
+    -add <aside> to show list of all adventures;
+    -link each adventure to be displayed in SingleAdventureView;
+
+Extra:
+
+-Add load more button to AllAdventures at the bottom;
+-add mobile+tablet layout;

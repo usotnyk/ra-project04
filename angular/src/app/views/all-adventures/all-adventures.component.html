@@ -1,11 +1,21 @@
 <app-nav-dark></app-nav-dark>
-
-<h1 class="padding-md">All Adventures</h1>
-
-<article class="margin-md all-advnt-container">
-  <div style='background-image: url("assets/images/blog-photos/glamping.jpg")' class="all-advtr-img-holder">
-    <h2 class="font-white">Some Title Here</h2>
+<div *ngIf='adventures' class="flex">
+  <div class="all-advnt-container fl-one">
+    <article class="margin-md" *ngFor='let adventure of adventures | slice:0:10'>
+      <div class="pos-relative">
+        <img class="all-advtr-img" [attr.src]="adventure.image">
+        <h3 class="font-white pos-absolute">{{ adventure.title }}</h3>
+      </div>
+      <p>{{ adventure.content }}</p>
+      <button class="entry-btn" [routerLink]="['/single-adventure', adventure.ID]" routerLinkActive="active">READ MORE</button>
+    </article>
   </div>
-  <p>Lorem ipsum dolor sit amet, ea natum suavitate repudiare duo, ei eos wisi officiis sapientem. Dictas laoreet vivendo vix te. Mel nemore inermis te, suas saepe signiferumque ei has, mea erat nihil ei. Eum no dolorem petentium deterruisset, cu sale magna definitiones his, eligendi periculis sea ne. Vis ei nullam partiendo, vim laudem salutandi persecuti id.</p>
-  <button class="entry-btn" routerLink="/single-adventure" outerLinkActive="active">READ MORE</button>
-</article>
+
+  <aside class="width-quarter aside-container">
+    <h3>More Adentures</h3>
+    <div *ngFor='let adventure of adventures | slice:10:60'>
+      <a [routerLink]="['/single-adventure', adventure.ID]" routerLinkActive="active">{{ adventure.title }}</a>
+    </div>
+  </aside>
+
+</div>

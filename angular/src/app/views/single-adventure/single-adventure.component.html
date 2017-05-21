@@ -1,10 +1,21 @@
 <app-nav-dark></app-nav-dark>
 
-<div *ngIf='currentAdventureToDisplay'>
-  <h1>Single Adventure View</h1>
-  <h2>{{ currentAdventureToDisplay.title }}</h2>
-  <p>{{ currentAdventureToDisplay.content }}</p>
-  <img class="single-adv-img" style="max-width:100%" [attr.src]="currentAdventureToDisplay.image">
+<div *ngIf='currentAdventureToDisplay' >
+  <div class="flex">
+    <div class="single-adv-container fl-one">
+      <img class="single-adv-img" [attr.src]="currentAdventureToDisplay.image">
+      <h2>{{ currentAdventureToDisplay.title }}</h2>
+      <p>{{ currentAdventureToDisplay.content }}</p>
+    </div>
 
+    <aside *ngIf='adventures' class="width-quarter aside-container">
+      <h3>More Adentures</h3>
+      <div *ngFor='let adventure of adventures | slice:0:40'>
+       <a [routerLink]="['/single-adventure', adventure.ID]" routerLinkActive="active">{{ adventure.title }}
+       </a>
+      </div>
+    </aside>
+
+  </div>
   <app-form></app-form>
 </div>

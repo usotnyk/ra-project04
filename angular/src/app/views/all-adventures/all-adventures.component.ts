@@ -10,10 +10,22 @@ import { Adventure } from '../../models/adventure';
   styleUrls: ['../../../../../dist/min.styles.css']
 })
 export class AllAdventuresComponent implements OnInit {
+  adventures: any;
 
-  constructor() { }
+  constructor(private service: LatestAdventuresService) { }
 
   ngOnInit() {
+    this.displayAllAdventures();
+  }
+
+  displayAllAdventures(): void {
+    
+    this.service.getAdventures().then(adventures => {
+      this.adventures = adventures.adventures;
+      console.log(this.adventures);
+      return this.adventures;
+    });
+
   }
 
 }
