@@ -1,4 +1,6 @@
-export class Adventure {
+import { IAdventure } from './i-adventure';
+
+export class Adventure implements IAdventure {
   
   ID:number = 0;
   author:string = "";
