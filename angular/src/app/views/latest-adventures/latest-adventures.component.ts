@@ -21,7 +21,7 @@ export class LatestAdventuresComponent implements OnInit {
   ngOnInit(): void {
     this.latestAdventureService.getAdventures().then(adventures => {
       this.allAdventures = adventures;
-      //console.log(adventures);
+      //console.log(this.allAdventures);
     });
   }
 }

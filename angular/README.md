@@ -44,7 +44,7 @@ DONE - All-adventures view:
 -Form: 
   -inidicate required fields visually;
   -add checks to the fields + display errors when filling the form; 
-  -add select dropdown to the form + enums;
+  DONE -add select dropdown to the form;
 
   DONE -SingleAdventureView:
     -add <aside> to show list of all adventures;
@@ -52,5 +52,5 @@ DONE - All-adventures view:
 
 Extra:
 
--Add load more button to AllAdventures at the bottom;
+DONE -Add load more button to AllAdventures at the bottom;
 -add mobile+tablet layout;

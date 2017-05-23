@@ -20,7 +20,7 @@
     <option *ngFor='let category of categories'>{{ category }}</option>
   </select><br />
 
-  <input class="shop-btn margin-sm margin-left-none" type="button" id="submit" name="submit" value="SUBMIT" (click)="prepareData($event)"><br />
+  <input class="shop-btn margin-sm margin-left-none" type="button" id="submit" name="submit" value="SUBMIT" (click)="validateForm($event)"><br />
 </form>
 
 
@@ -46,6 +46,20 @@
     <div  id="inner-modal">
       <p class="text-center">Oops, something went wrong...</p>
       <p class="text-center">{{ serverResponseMsg.error.code }}</p>
+    </div>
+    <button (click)="hideSubmitModal()" class="fl-self-end modal-btn">OK</button>
+  </div>
+</div>
+
+<!--Empty Form Modal-->
+<div id="submit-modal" class="modal" *ngIf="displayCorrectErrorModal">
+
+<!-- Modal content -->
+  <div class="modal-content flex fl-col fl-jstcont-spbtw">
+    <span (click)="hideSubmitModal()" class="fl-self-end" id="close">&times;</span>
+    <div  id="inner-modal">
+      <p class="text-center">Please make everything is filled out before submitting!</p>
+    <!--   <p class="text-center">{{ serverResponseMsg.error.code }}</p> -->
     </div>
     <button (click)="hideSubmitModal()" class="fl-self-end modal-btn">OK</button>
   </div>

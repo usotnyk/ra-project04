@@ -16,8 +16,15 @@ export class SingleAdventureComponent implements OnInit {
   constructor(private route: ActivatedRoute, private service: LatestAdventuresService) { }
 
   ngOnInit(): void {
-    this.route.params.subscribe(params => this.displayAdventure(params['ID']));
+    this.route.params.subscribe(params => {
+      this.displayAdventure(params['ID']);
+      document.body.scrollTop = 0;
+    });
   }
+
+    //  router.subscribe(() => {
+    //   window.scrollTo(0, 0);
+    // });
 
   displayAdventure(adventureID: number): void {
 

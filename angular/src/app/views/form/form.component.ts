@@ -12,6 +12,7 @@ export class FormComponent implements OnInit {
 
   shouldDisplaySuccessModal: boolean = false;
   shouldDisplayErrorModal: boolean = false;
+  displayCorrectErrorModal: boolean = false;
   serverResponseMsg: any;
   categories: Array<string> = ['Nature', 'Sports', 'Arts', 'Travel', 'Culture', 'Food', 'Other fun stuff']
   
@@ -20,13 +21,46 @@ export class FormComponent implements OnInit {
   ngOnInit() {
   }
 
+  validateForm(event) {
+    let AdventuresForm = event.target.parentElement;
+    let adventuresFormElements = AdventuresForm.elements;
+    let titleValue: string = "";
+    let contentValue: string = "";
+    let imageValue: string = "";
+    let categoriesValue: string = "";
+    let formIsValid: boolean = true;
+    for (let element in adventuresFormElements) {
+      console.log(adventuresFormElements[element].value);
+      switch (element) {
+        case "title":
+          titleValue = adventuresFormElements[element].value;
+          console.log("title is found");
+        case "content":
+          contentValue = adventuresFormElements[element].value;
+        case "image":
+          imageValue = adventuresFormElements[element].value;
+        case "categories":
+          categoriesValue = adventuresFormElements[element].value;       
+      }
+    }
+    if(titleValue.length === 0 || contentValue.length === 0 || imageValue.length === 0 || categoriesValue.length === 0) {
+      formIsValid = false;
+    }
+    if (formIsValid === false) {
+      this.displayCorrectErrorModal = true;
+    } else {
+      //console.log("preparing form");
+      this.prepareData(event);
+
+    }   
+  }
+
   prepareData(event) {
     //console.log('inside prepare data');
     let AdventuresForm = event.target.parentElement;
-    //console.log(AdventuresForm);
-
+    console.log(AdventuresForm);
     let serializedForm = this.jsSerializeArray(AdventuresForm);
-    console.log(serializedForm);
+    //console.log(serializedForm);
     let jsonParams = JSON.stringify(serializedForm);
     this.onParamsReady(jsonParams);
   }
@@ -44,6 +78,9 @@ export class FormComponent implements OnInit {
         const isFieldDisabled: Boolean = field.disabled;
         const fieldType = field.type;
         const fieldValue = field.value;
+        //console.log(fieldValue);
+        //debugger
+
         if (fieldName && !isFieldDisabled && fieldType !== 'file' && fieldType !== 'reset' && fieldType !== 'submit' && fieldType !== 'button') {
           if (field.type === 'select-multiple') {
             let newField = '';
@@ -65,6 +102,9 @@ export class FormComponent implements OnInit {
             s[s.length] = { name: fieldName, value: fieldValue };
           }
         }
+        // if (fieldValue === "") {
+        // this.shouldDisplayErrorModal = true;  
+        // }; //redo this
       }
     }
   return s;
@@ -78,16 +118,7 @@ export class FormComponent implements OnInit {
   };
 
   displaySubmitModal(response) {
-    //console.log(response);
     this.serverResponseMsg = JSON.parse(response._body);
-    //console.log(this.serverResponseMsg);
-    //let parsedServerResponseObj = JSON.parse(response._body);
-    //console.log(parsedServerResponseObj);
-    //{"error":{"type":"post","code":"the title\/content has to be greater than 8 characters ... Jermey"}}
-    //{"post_created":"post has been created with the ID of : 221"}
-  
-
-     //.indexOf() && .lastIndexOf()
     
     if (this.serverResponseMsg.post_created) {
       this.shouldDisplaySuccessModal = true;
@@ -101,11 +132,9 @@ export class FormComponent implements OnInit {
   }
 
   hideSubmitModal() {
-    //console.log("inside hideSubmitModal");
-    //debugger;
     this.shouldDisplaySuccessModal = false;
-    //console.log(this.shouldDisplaySuccessModal);
     this.shouldDisplayErrorModal = false;
+    this.displayCorrectErrorModal = false;
     this.serverResponseMsg = "";
   }
 }
