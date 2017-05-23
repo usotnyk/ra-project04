@@ -2,11 +2,11 @@ import { IAdventure } from './i-adventure';
 
 export class Adventure implements IAdventure {
   
-  ID:number = 0;
-  author:string = "";
+  ID?:number = 0;
+  author?:string = "";
   categories:Array<string> = [];
   content:string = "";
-  date:string = "";
+  date?:string = "";
   image:string = "";
   title:string = "";
 

@@ -1,7 +1,7 @@
 <app-nav-dark></app-nav-dark>
 <div *ngIf='adventures' class="flex">
   <div class="all-advnt-container fl-one">
-    <article class="margin-md" *ngFor='let adventure of adventures | slice:0:10'>
+    <article class="margin-md" *ngFor='let adventure of adventuresSlice; trackBy: trackByAdventures'>
       <div class="pos-relative">
         <img class="all-advtr-img" [attr.src]="adventure.image">
         <h3 class="font-white pos-absolute">{{ adventure.title }}</h3>
@@ -9,6 +9,18 @@
       <p>{{ adventure.content }}</p>
       <button class="entry-btn" [routerLink]="['/single-adventure', adventure.ID]" routerLinkActive="active">READ MORE</button>
     </article>
+
+<!--     <article [hidden]="loadMore" class="margin-md" *ngFor='let adventure of adventures | slice:limit:1'>
+      <div class="pos-relative">
+        <img class="all-advtr-img" [attr.src]="adventure.image">
+        <h3 class="font-white pos-absolute">{{ adventure.title }}</h3>
+      </div>
+      <p>{{ adventure.content }}</p>
+      <button class="entry-btn" [routerLink]="['/single-adventure', adventure.ID]" routerLinkActive="active">READ MORE</button>
+    </article> -->
+
+
+    <button *ngIf='loadMoreButton' class="adv-btn" (click)="displayMoreAdventures()">LOAD MORE</button>
   </div>
 
   <aside class="width-quarter aside-container">

@@ -34,7 +34,6 @@ import { FormComponent } from './views/form/form.component';
     AllAdventuresComponent,
     NavDarkComponent,
     FormComponent,
-    //AlertComponent
   ],
   imports: [
     BrowserModule,

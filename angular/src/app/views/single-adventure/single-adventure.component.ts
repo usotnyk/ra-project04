@@ -28,7 +28,7 @@ export class SingleAdventureComponent implements OnInit {
     
     this.service.getAdventures().then(adventures => {
       this.adventures = adventures.adventures;
-      console.log(this.adventures);
+      //console.log(this.adventures);
 
       let currentAdventureToDisplay = this.adventures.find(adventure => {
         return adventure.ID == currentAdventureId;

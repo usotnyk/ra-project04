@@ -110,6 +110,10 @@ a:hover {
   margin: 20px;
 }
 
+.margin-left-none {
+  margin-left: 0;
+}
+
 .width-full {
   width: 100%;
 }
@@ -143,6 +147,10 @@ hr {
   border: 0.5px solid #E4E4E4;
 }
 
+.btn:hover {
+  outline: -webkit-focus-ring-color auto 5px;
+}
+
 /*Header*/
 header {
   height: 80vh;
@@ -164,6 +172,7 @@ header {
 }
 
 .shop-btn {
+  @extend .btn;
   color: white;
   background-color: $color-main;
   border: none;
@@ -191,6 +200,7 @@ header {
 }
 
 .entry-btn {
+  @extend .btn;
   border: 1px solid black;
   padding: 8px 15px;
   background-color: transparent;
@@ -198,7 +208,7 @@ header {
 
 /*Latest-post*/
 .latest-posts-container {
-  height: 40vh;
+  height: 400px;
     h2 {
       font-size: 2em;
       line-height:1.3em; 
@@ -214,6 +224,7 @@ header {
 }
 
 .read-btn {
+  @extend .btn;
   @extend .entry-btn;  
   border: 1px solid white;
   color: white;
@@ -223,6 +234,7 @@ header {
 .article-box {
   height: 100%;
   padding: 20px 10px;
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)) bottom/cover no-repeat;
 }
 
 .article-box-1 {
@@ -232,28 +244,29 @@ header {
 
 .article-box-2 {
   @extend .article-box;
-  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('../assets/images/adventure-photos/beach-bonfire.jpg') no-repeat;
-  background-size: cover, cover;
-  background-position: center;
+  //background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('../assets/images/adventure-photos/beach-bonfire.jpg') no-repeat;
+  //background-size: cover, cover;
+  //background-position: center;
   margin-bottom: 7px;
 }
 
 .article-box-3 {
   @extend .article-box;
-  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('../assets/images/adventure-photos/mountain-hikers.jpg') no-repeat;
-  background-size: cover, cover;
-  background-position: bottom center;
+  //background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('../assets/images/adventure-photos/mountain-hikers.jpg') no-repeat;
+  //background-size: cover, cover;
+  //background-position: bottom center;
   margin-right: 7px;
 }
 
 .article-box-4 {
   @extend .article-box;
-  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('../assets/images/adventure-photos/night-sky.jpg') no-repeat;
-  background-size: cover, cover;
-  background-position: bottom center;
+  //background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('../assets/images/adventure-photos/night-sky.jpg') no-repeat;
+  //background-size: cover, cover;
+  //background-position: bottom center;
 }
 
 .adv-btn {
+  @extend .btn;
   @extend .shop-btn;
   margin: 40px 20px 20px 20px;
 }
@@ -264,6 +277,7 @@ header {
   z-index: -1;
   position: absolute;
   top: 0;
+  left: 0;
 }
 
 .pos-ralative {
@@ -298,6 +312,16 @@ header {
 
 }
 /*Single Adventure*/
+.single-adv-container {
+  
+  .adv-btn {
+    @extend .btn;
+    @extend .shop-btn;
+    //margin: 40px 20px 20px 0px;
+    margin-left: 0;
+  }
+}
+
 .single-adv-img {
   max-width: 100%;
 }
@@ -313,7 +337,8 @@ header {
 
 /*Form*/
 .form-label {
-
+  font-family: 'Merriweather', serif;
+  font-size: 16px;
 }
 
 .form-input {
@@ -326,6 +351,7 @@ header {
 .content-input {
   height: 100px;
   overflow: auto;
+  vertical-align: top;
 }
 
 /*Modals*/
@@ -335,34 +361,34 @@ header {
   display: none;
 }
 .modal {
-    //display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 
 /* Modal Content Box */
 .modal-content {
-    background-color: #fefefe;
-    margin: 15% auto; /* 15% from the top and centered */
-    padding: 20px;
-    border: 1px solid #888;
-    width: 50%; /* Could be more or less, depending on screen size */
-    height: 30%;
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 50%; /* Could be more or less, depending on screen size */
+  height: 150px;
 }
 
 .modal-btn {
+  @extend .btn;
   @extend .shop-btn;
-  width: 10%;
+  width: 15%;
 }
 
-#close:hover, .modal-btn:hover {
+#close:hover {
   outline: -webkit-focus-ring-color auto 5px;
 }
 

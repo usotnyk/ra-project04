@@ -6,14 +6,16 @@
       <img class="single-adv-img" [attr.src]="currentAdventureToDisplay.image">
       <h2>{{ currentAdventureToDisplay.title }}</h2>
       <p>{{ currentAdventureToDisplay.content }}</p>
+      <button class="adv-btn" routerLink="/all-adventures" routerLinkActive="active">MORE ADVENTURES</button>
     </div>
 
     <aside *ngIf='adventures' class="width-quarter aside-container">
       <h3>More Adentures</h3>
-      <div *ngFor='let adventure of adventures | slice:0:40'>
+      <div *ngFor='let adventure of adventures | slice:0:20'>
        <a [routerLink]="['/single-adventure', adventure.ID]" routerLinkActive="active">{{ adventure.title }}
        </a>
       </div>
+
     </aside>
 
   </div>

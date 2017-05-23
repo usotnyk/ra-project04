@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { LatestAdventuresService } from '../../services/latest-adventures.service';
+import { Adventure } from '../../models/adventure';
 
+ 
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
@@ -10,7 +12,8 @@ export class FormComponent implements OnInit {
 
   shouldDisplaySuccessModal: boolean = false;
   shouldDisplayErrorModal: boolean = false;
-  serverResponseMsg: string = "";
+  serverResponseMsg: any;
+  categories: Array<string> = ['Nature', 'Sports', 'Arts', 'Travel', 'Culture', 'Food', 'Other fun stuff']
   
   constructor(private latestAdventureService: LatestAdventuresService) { }
 
@@ -23,7 +26,7 @@ export class FormComponent implements OnInit {
     //console.log(AdventuresForm);
 
     let serializedForm = this.jsSerializeArray(AdventuresForm);
-    //console.log(serializedForm);
+    console.log(serializedForm);
     let jsonParams = JSON.stringify(serializedForm);
     this.onParamsReady(jsonParams);
   }
@@ -75,23 +78,23 @@ export class FormComponent implements OnInit {
   };
 
   displaySubmitModal(response) {
-    console.log(response);
-    this.serverResponseMsg = response._body;
-    console.log(this.serverResponseMsg);
+    //console.log(response);
+    this.serverResponseMsg = JSON.parse(response._body);
+    //console.log(this.serverResponseMsg);
+    //let parsedServerResponseObj = JSON.parse(response._body);
+    //console.log(parsedServerResponseObj);
     //{"error":{"type":"post","code":"the title\/content has to be greater than 8 characters ... Jermey"}}
     //{"post_created":"post has been created with the ID of : 221"}
-    
-     let msg: string =this.serverResponseMsg[2] + this.serverResponseMsg[3]+this.serverResponseMsg[4]+this.serverResponseMsg[5];
-     console.log(msg);
+  
 
      //.indexOf() && .lastIndexOf()
     
-    if (msg === "post") {
+    if (this.serverResponseMsg.post_created) {
       this.shouldDisplaySuccessModal = true;
-      console.log(this.shouldDisplaySuccessModal);
+      //console.log(this.shouldDisplaySuccessModal);
     } else {
       this.shouldDisplayErrorModal = true;
-      console.log(this.shouldDisplayErrorModal);
+      //console.log(this.shouldDisplayErrorModal);
     }
 
     
