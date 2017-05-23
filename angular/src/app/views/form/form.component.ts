@@ -56,11 +56,9 @@ export class FormComponent implements OnInit {
   }
 
   prepareData(event) {
-    //console.log('inside prepare data');
     let AdventuresForm = event.target.parentElement;
     console.log(AdventuresForm);
     let serializedForm = this.jsSerializeArray(AdventuresForm);
-    //console.log(serializedForm);
     let jsonParams = JSON.stringify(serializedForm);
     this.onParamsReady(jsonParams);
   }
@@ -78,8 +76,6 @@ export class FormComponent implements OnInit {
         const isFieldDisabled: Boolean = field.disabled;
         const fieldType = field.type;
         const fieldValue = field.value;
-        //console.log(fieldValue);
-        //debugger
 
         if (fieldName && !isFieldDisabled && fieldType !== 'file' && fieldType !== 'reset' && fieldType !== 'submit' && fieldType !== 'button') {
           if (field.type === 'select-multiple') {
@@ -88,23 +84,16 @@ export class FormComponent implements OnInit {
             const currentFormLength = s.length;
             for (let j = 0; j < numberOfOptions; j++) {
               if (field.options[j].selected) {
-                // this has to be modified for correct submission the old code is below
-                // s[s.length] = { name: field.name, value: field.options[j].value };
-                // new value needs to be a comma separated list
                 newField = newField + `${field.options[j].value},`;
                 s[currentFormLength] = { name: field.name, value: newField };
               }
             }
-            // strip the last comma
             s[currentFormLength].value = s[currentFormLength].value.toString().slice(0, -1);
 
           } else if ((fieldType !== 'checkbox' && fieldType !== 'radio') || field.checked) {
             s[s.length] = { name: fieldName, value: fieldValue };
           }
         }
-        // if (fieldValue === "") {
-        // this.shouldDisplayErrorModal = true;  
-        // }; //redo this
       }
     }
   return s;
@@ -122,10 +111,8 @@ export class FormComponent implements OnInit {
     
     if (this.serverResponseMsg.post_created) {
       this.shouldDisplaySuccessModal = true;
-      //console.log(this.shouldDisplaySuccessModal);
     } else {
       this.shouldDisplayErrorModal = true;
-      //console.log(this.shouldDisplayErrorModal);
     }
 
     
