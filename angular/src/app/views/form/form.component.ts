@@ -16,10 +16,14 @@ export class FormComponent implements OnInit {
   serverResponseMsg: any;
   categories: Array<string> = ['Nature', 'Sports', 'Arts', 'Travel', 'Culture', 'Food', 'Other fun stuff']
   
+  model = new Adventure();
   constructor(private latestAdventureService: LatestAdventuresService) { }
 
   ngOnInit() {
   }
+
+  // TODO: Remove this when we're done
+  //get diagnostic() { return JSON.stringify(this.model); }
 
   validateForm(event) {
     let AdventuresForm = event.target.parentElement;

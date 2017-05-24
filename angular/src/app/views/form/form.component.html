@@ -4,21 +4,45 @@
 
 <form #apiForm="ngForm" id="apiForm" method="post" class="margin-sm">
 
-  <label class="form-label" for="title">Title</label><br />
-  <input class="width-half form-input" name="title" placeholder="Title of your Adventure" required ><br />
+  <div class="form-group">
+    <label class="form-label" for="title">Title</label><br />
+    <input required class="width-half form-input" name="title" placeholder="Title of your Adventure" 
+    [(ngModel)]="model.title"
+    #title='ngModel'>
+    <div [hidden]='title.valid || title.pristine' class="alert alert-danger width-half">
+    Name is required
+    </div>
+    <br />
+  </div>
 
-  <label class="form-label" for="content">Content</label><br />
-  <textarea class="width-half form-input content-input" name="content" placeholder="Share your exciting adventure with us!" required></textarea><br />
-  <!-- <input type="text" class="width-half form-input content-input" name="content" placeholder="Share your exciting adventure with us!"><br />
- -->
-  <label class="form-label" for="image">Image</label><br />
-  <input class="width-half form-input" name="image" placeholder="Add your image URL here" required><br />
+  <div class="form-group">
+    <label class="form-label" for="content">Content</label><br />
+    <textarea required class="width-half form-input content-input" name="content" placeholder="Share your exciting adventure with us!" [(ngModel)]="model.content" #content='ngModel'></textarea>
+    <div [hidden]='content.valid || content.pristine' class="alert alert-danger width-half">
+    Content is required
+    </div>
+    <br />
+  </div>
 
-  <label class="form-label" for="categories">Categories</label><br />
-<!--   <input class="width-half form-input" name="categories" placeholder="Select one or more categories"><br /> -->
-  <select class="width-half form-input" name="categories" multiple required>
-    <option *ngFor='let category of categories'>{{ category }}</option>
-  </select><br />
+  <div class="form-group">
+    <label class="form-label" for="image">Image</label><br />
+    <input required class="width-half form-input" name="image" placeholder="Add your image URL here" [(ngModel)]="model.image"
+    #image='ngModel'>
+    <div [hidden]='image.valid || image.pristine' class="alert alert-danger width-half">
+    Image is required
+    </div>
+    <br />
+  </div>
+
+  <div class="form-group">
+    <label class="form-label" for="categories">Categories</label><br />
+  <!--   <input class="width-half form-input" name="categories" placeholder="Select one or more categories"><br /> -->
+    <select required class="width-half form-input" name="categories" [(ngModel)]="model.categories">
+    <!--add multiple! -->
+      <option *ngFor='let category of categories' [value]="category">{{ category }}</option>
+    </select>
+    <br />
+  </div>
 
   <input class="shop-btn margin-sm margin-left-none" type="button" id="submit" name="submit" value="SUBMIT" (click)="validateForm($event)"><br />
 </form>
@@ -58,7 +82,7 @@
   <div class="modal-content flex fl-col fl-jstcont-spbtw">
     <span (click)="hideSubmitModal()" class="fl-self-end" id="close">&times;</span>
     <div  id="inner-modal">
-      <p class="text-center">Please make everything is filled out before submitting!</p>
+      <p class="text-center">Please make sure everything is filled out before submitting!</p>
     <!--   <p class="text-center">{{ serverResponseMsg.error.code }}</p> -->
     </div>
     <button (click)="hideSubmitModal()" class="fl-self-end modal-btn">OK</button>

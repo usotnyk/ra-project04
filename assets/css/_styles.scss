@@ -336,22 +336,47 @@ header {
 }
 
 /*Form*/
+.form-group {
+  margin-bottom: 20px;
+}
+
 .form-label {
   font-family: 'Merriweather', serif;
   font-size: 16px;
+  //font-weight: 700; 
 }
 
 .form-input {
-  margin: 10px 0 20px;
+  margin: 10px 0 0;
   border-radius: 2px;
   border: solid #E4E4E4 2px;
   background-color: #F4F4F4;
+  font: inherit;
 }
   
 .content-input {
   height: 100px;
   overflow: auto;
   vertical-align: top;
+}
+
+.ng-valid[required], ng-valid.required {
+  border-left: 5px solid $color-main;
+}
+.ng-invalid:not(form)  {
+  border-left: 5px solid $color-secondary;
+}
+
+.alert {
+  @extend .form-input;
+  margin: 0 0 0 0;
+  font-family: 'Merriweather', serif;
+  padding: 1px;
+}
+
+.alert-danger {
+  @extend .ng-invalid:not(form);
+  color: $color-secondary;
 }
 
 /*Modals*/
