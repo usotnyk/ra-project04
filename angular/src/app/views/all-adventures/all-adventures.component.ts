@@ -20,6 +20,7 @@ export class AllAdventuresComponent implements OnInit {
 
   ngOnInit() {
     this.loadAdventures().then(this.displayAdventures.bind(this));
+    document.body.scrollTop = 0;
   }
 
   loadAdventures(): Promise<any> {
