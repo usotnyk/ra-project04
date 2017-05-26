@@ -1,0 +1,438 @@
+
+/*Main styles*/
+body {
+font-family: 'Merriweather', serif;
+font-size: 16px;
+line-height: 1.2em;
+color: $color-grey;
+}
+
+h1, h2, h3, h4, h5, h6 {
+font-family: 'Raleway', sans-serif;
+}
+
+h1 {
+  font-size: 2.5em;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+h2 {
+  font-size: 2em;
+  text-transform: uppercase;
+  margin: 20px 0;
+}
+
+h3 {
+  font-size: 1.6em;
+}
+
+p {
+  font-family: 'Merriweather', serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  font-family: 'Merriweather', serif;
+}
+
+a:visited {
+  color: $color-main;
+}
+a:hover {
+  @extend a:visited;
+  text-decoration: underline;
+}
+
+/*Flex*/
+
+.flex {
+  display: flex;
+}
+
+.fl-col {
+  flex-direction: column;
+}
+
+.fl-wrap {
+  flex-wrap: wrap;
+}
+
+.fl-jstcont-spbtw {
+  justify-content: space-between;
+}
+
+.fl-align-cnt {
+  align-items: center;
+}
+
+.fl-one {
+  flex: 1;
+}
+.fl-self-end {
+  align-self: flex-end;
+}
+
+.pos-relative {
+  position: relative;
+}
+.pos-absolute {
+  position: absolute;
+}
+/*Colors*/
+.font-white {
+  color: #fff;
+}
+
+/*Paddings-Margins-Alignment*/
+.text-center {
+  text-align: center;
+}
+
+.text-end {
+  text-align: end;
+}
+
+.padding-sm {
+  padding: 20px;
+}
+
+.padding-md {
+  padding: 50px;
+}
+
+.margin-sm {
+  margin: 10px;
+}
+
+.margin-md {
+  margin: 20px;
+}
+
+.margin-left-none {
+  margin-left: 0;
+}
+
+.width-full {
+  width: 100%;
+}
+
+.width-half {
+  width: 50%;
+}
+
+.width-quarter {
+  width: 25%;
+}
+
+/* Navigation */
+
+nav {
+  max-height: 50px;
+  padding: 0 40px;
+    img {
+      width: 80px;
+    }
+    ul {
+      width:40%;
+    }
+}
+
+.nav-dark {
+  color: $color-main;
+}
+
+hr {
+  border: 0.5px solid #E4E4E4;
+}
+
+.btn:hover {
+  outline: -webkit-focus-ring-color auto 5px;
+}
+
+/*Header*/
+header {
+  height: 80vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('../images/logos/inhabitent-logo-full.svg') no-repeat, url('../images/home-hero.jpg') no-repeat;
+  background-size: cover, 20%, cover;
+  background-position: center, center, top center;
+  margin-top: -90px;
+}
+
+/*Shop Stuff*/
+
+.shop-container {
+  border: 1px solid #DFDFDF;
+  border-top: 3px solid #DFDFDF;
+  padding: 10px;
+    p {
+      margin: 20px 0;
+    }
+}
+
+.shop-btn {
+  @extend .btn;
+  color: white;
+  background-color: $color-main;
+  border: none;
+  padding: 8px 15px;
+}
+
+/*Journal*/
+.journal-container {
+  border: 1px solid #DFDFDF;
+  margin: 0 5px;
+    p {
+      font-size: 0.5em;
+    }
+    h3 {
+      text-transform: uppercase;
+      color: $color-main;
+      margin-bottom: 10px; 
+    }
+    div {
+      padding: 10px;
+    }
+    img {
+      border-bottom: 3px solid #DFDFDF;
+    }
+}
+
+.entry-btn {
+  @extend .btn;
+  border: 1px solid black;
+  padding: 8px 15px;
+  background-color: transparent;
+}
+
+/*Latest-post*/
+.latest-posts-container {
+  height: 400px;
+    h2 {
+      font-size: 2em;
+      line-height:1.3em; 
+    }
+    h3 {
+      font-size: 1.7em;
+      line-height:1.3em;
+    }
+    h4 {
+      font-size: 1.5em;
+      line-height:1.3em;
+    }
+}
+
+.read-btn {
+  @extend .btn;
+  @extend .entry-btn;  
+  border: 1px solid white;
+  color: white;
+  margin-top: 20px;
+}
+
+.article-box {
+  height: 100%;
+  padding: 20px 10px;
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)) bottom/cover no-repeat;
+}
+
+.article-box-1 {
+  @extend .article-box;
+  margin-right: 7px;
+}
+
+.article-box-2 {
+  @extend .article-box;
+  //background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('../assets/images/adventure-photos/beach-bonfire.jpg') no-repeat;
+  //background-size: cover, cover;
+  //background-position: center;
+  margin-bottom: 7px;
+}
+
+.article-box-3 {
+  @extend .article-box;
+  //background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('../assets/images/adventure-photos/mountain-hikers.jpg') no-repeat;
+  //background-size: cover, cover;
+  //background-position: bottom center;
+  margin-right: 7px;
+}
+
+.article-box-4 {
+  @extend .article-box;
+  //background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('../assets/images/adventure-photos/night-sky.jpg') no-repeat;
+  //background-size: cover, cover;
+  //background-position: bottom center;
+}
+
+.adv-btn {
+  @extend .btn;
+  @extend .shop-btn;
+  margin: 40px 20px 20px 20px;
+}
+
+.bg-image {
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.pos-ralative {
+  position: relative;
+}
+
+/*All Adventures*/
+.all-advnt-container {
+
+  article {
+    margin-top: 40px;
+  }
+
+  p {
+    color: $color-grey;
+    margin: 10px 0;
+  }
+
+  h3 {
+      font-size: 1.5em;
+      line-height:1.3em;
+      padding: 5px 10px;
+      width: 30%;
+      background-color: $color-main;
+      top: 20px; 
+    }
+}
+
+.all-advtr-img {
+  z-index: -1;
+  max-width:100%;
+
+}
+/*Single Adventure*/
+.single-adv-container {
+  
+  .adv-btn {
+    @extend .btn;
+    @extend .shop-btn;
+    //margin: 40px 20px 20px 0px;
+    margin-left: 0;
+  }
+}
+
+.single-adv-img {
+  max-width: 100%;
+}
+
+.aside-container {
+  border-left: 1px solid #DFDFDF;
+  padding: 10px;
+
+  h3 {
+    margin-bottom: 20px;
+  }
+}
+
+/*Form*/
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-label {
+  font-family: 'Merriweather', serif;
+  font-size: 16px;
+  //font-weight: 700; 
+}
+
+.form-input {
+  margin: 10px 0 0;
+  border-radius: 2px;
+  border: solid #E4E4E4 2px;
+  background-color: #F4F4F4;
+  font: inherit;
+}
+  
+.content-input {
+  height: 100px;
+  overflow: auto;
+  vertical-align: top;
+}
+
+.ng-valid[required], ng-valid.required {
+  border-left: 5px solid $color-main;
+}
+.ng-invalid:not(form)  {
+  border-left: 5px solid $color-secondary;
+}
+
+.alert {
+  @extend .form-input;
+  margin: 0 0 0 0;
+  font-family: 'Merriweather', serif;
+  padding: 1px;
+}
+
+.alert-danger {
+  @extend .ng-invalid:not(form);
+  color: $color-secondary;
+}
+
+/*Modals*/
+
+/* The Modal (background) */
+.hidden {
+  display: none;
+}
+.modal {
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 50%; /* Could be more or less, depending on screen size */
+  height: 150px;
+}
+
+.modal-btn {
+  @extend .btn;
+  @extend .shop-btn;
+  width: 15%;
+}
+
+#close:hover {
+  outline: -webkit-focus-ring-color auto 5px;
+}
+
+/*Footer*/
+.footer {
+  background: url('../images/dark-wood.png');
+  line-height: 1.8em;
+  padding-bottom: 0px;
+  margin-top: 20px;
+    h5 {
+      color: $color-secondary;
+      font-weight: 700;
+      font-size: 0.8em;
+    }
+    p {
+      font-size: 0.7em;
+    }
+
+    i {
+      margin: 7px 7px 7px 0;
+    } 
+}

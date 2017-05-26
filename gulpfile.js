@@ -9,18 +9,18 @@ var reload = browserSync.reload;
 
 
 var src = {
-  scss: 'assets/**/*.scss',
-  css: 'dist/*.css',
-  html: '*.html'
+  scss: './src/assets/**/*.scss',
+  css: './src/assets/dist-css/*.css',
+  html: './src/*.html'
 };
 
 
 gulp.task("compileCSS", function() {
-  return gulp.src("assets/css/main.scss") //usually do "assets/**/*.css" not to look inside node folders
+  return gulp.src("src/assets/css/main.scss") //usually do "assets/**/*.css" not to look inside node folders
       .pipe(sass()) //translating scss into css
       .pipe(rename("min.styles.css")) //renaming file to min, which will be linked to html
       .pipe(cleanCSS({compatibility: 'ie8'}))
-      .pipe(gulp.dest("dist")) //location to put the newly created file
+      .pipe(gulp.dest("./src/assets/dist-css")) //location to put the newly created file
 
   }); 
 
